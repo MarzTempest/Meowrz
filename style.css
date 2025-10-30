@@ -43,7 +43,7 @@ nav ul {
   border-radius: 25px;
   background: rgba(40,40,40,0.7);
   transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 8px rgba(0,0,0,0.3);
 }
 
 .nav-link:hover {
@@ -60,20 +60,28 @@ nav ul {
   justify-content: center;
   height: 100vh;
   text-align: center;
+  background: url('https://dyldotbluefiles.blob.core.windows.net/img/Dsmj5') center/cover no-repeat fixed;
   color: white;
   overflow: hidden;
 }
 
 .hero::before {
-  background: url('https://cdn.dyl.blue/img/Dsmj5.jpg') center/cover no-repeat fixed;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
 }
 
 .hero::after {
-  background: url('https://cdn.dyl.blue/img/CjN5p.gif') center/cover no-repeat;
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('https://dyldotbluefiles.blob.core.windows.net/img/CjN5p') center/cover no-repeat;
   opacity: 0.25;
   mix-blend-mode: screen;
+  z-index: 2;
 }
-
 
 .hero .content {
   position: relative;
@@ -129,7 +137,7 @@ nav ul {
   text-decoration: none;
   color: #fff;
   font-weight: 500;
-  transition: all 0.3s, transform 0.3s;
+  transition: all 0.3s ease;
   box-shadow: 0 0 12px rgba(0,0,0,0.4);
 }
 
@@ -159,14 +167,6 @@ nav ul {
   border-radius: 12px;
   background: #000;
   box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  opacity: 0;
-  transform: translateY(20px);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.8s ease;
-}
-
-.video-wrapper:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 25px rgba(255,102,170,0.4);
 }
 
 .video-wrapper iframe {
@@ -187,12 +187,3 @@ footer {
   font-size: 0.95rem;
   border-top: 1px solid #222;
 }
-
-/* ===== Fade-in Animation ===== */
-.fade-in.show,
-.link-card.show,
-.video-wrapper.show {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
-}
-
