@@ -10,15 +10,10 @@ document.querySelectorAll('.nav-link').forEach(link => {
   });
 });
 
-// Fade-in observer
+// Fade-in animations for sections, links, and videos
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if(!entry.isIntersecting) return;
-
-    // Sections
-    if(entry.target.classList.contains('fade-in')) {
-      entry.target.classList.add('show');
-    }
 
     // Links
     if(entry.target.classList.contains('links-grid')) {
@@ -33,16 +28,12 @@ const observer = new IntersectionObserver((entries) => {
         setTimeout(() => vid.classList.add('show'), index * 200);
       });
     }
+
+    // Sections
+    if(entry.target.classList.contains('fade-in')) {
+      entry.target.classList.add('show');
+    }
   });
 }, { threshold: 0.2 });
 
 document.querySelectorAll('.fade-in, .links-grid, .videos').forEach(el => observer.observe(el));
-
-// Back to top button
-const backToTop = document.getElementById('back-to-top');
-window.addEventListener('scroll', () => {
-  backToTop.style.display = window.scrollY > 500 ? 'block' : 'none';
-});
-backToTop.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
