@@ -65,22 +65,15 @@ nav ul {
 }
 
 .hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://cdn.dyl.blue/img/Dsmj5') center/cover no-repeat fixed;
-  z-index: 1;
+  background: url('https://cdn.dyl.blue/img/Dsmj5.jpg') center/cover no-repeat fixed;
 }
 
 .hero::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url('https://cdn.dyl.blue/img/CjN5p') center/cover no-repeat;
+  background: url('https://cdn.dyl.blue/img/CjN5p.gif') center/cover no-repeat;
   opacity: 0.25;
   mix-blend-mode: screen;
-  z-index: 2;
 }
+
 
 .hero .content {
   position: relative;
@@ -202,3 +195,4 @@ footer {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }
+
